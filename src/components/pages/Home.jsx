@@ -2,9 +2,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import img1 from "../../assets/images/img-5.jpg"
 import { pages } from '../../assets/data/pages';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="home">
     <Carousel style={{ }} >
@@ -25,7 +27,7 @@ function Home() {
               <p >{page.desc}</p>
             </u>
             <div className='row w-25 m-auto'>
-              <Button variant="dark" className='d-inline' style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Button onClick={(page) => navigate(page.link) } variant="dark" className='d-inline' style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <i className="fa-solid fa-arrow-up-right-from-square mx-2" style={{ width: '5%' }}></i>
                 {page.btn}
               </Button>
