@@ -74,6 +74,31 @@ html {
 .nav_header {
     align-items: center;
 }
+/* Academy page */
+.academy_page_forum{
+    background-image: url('./assets/images/img-4.jpg');
+    background-position: top;
+    width: 100%;
+    height: 30vh;
+    padding: 10% 0;
+    z-index: -1;
+    text-align: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+.academy_page_forum h1{
+    font-size: 2.5rem;
+}
+.content_div {
+    position: fixed;
+    left: 5%;
+    top: 50vh;
+}
+.academy_container .content_list_item:hover{
+    display: inline;
+    box-shadow: 2px 2px 7px 2px black;
+}
+
 /* ECHANGE PAGE */
 .exchange_page_parent {
     margin-top: -5%;

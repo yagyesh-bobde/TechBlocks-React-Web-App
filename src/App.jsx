@@ -1,12 +1,12 @@
 import React from 'react'
-import { NavbarC, Footer, Home, Exchange, Trades, Services } from './components'
+import { Academy, NavbarC, Footer, Home, Exchange, Trades, Services } from './components'
 import ExchangeState from './context/exchangeState'
+import StatsState from './context/statsState'
 import {
     Routes,
     Route
 } from 'react-router-dom'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { useLocation } from 'react-router-dom';
 
@@ -20,12 +20,17 @@ const App = () => {
 {/* CREATE ROUTES for the web pages to all the routes on the sites */}
         {/* ROUTE:! */}
         <ExchangeState>
+          <StatsState>
+
         <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/academy' element={<Academy/>} />
             <Route exact path='/exchange' element={<Exchange />} />
-            <Route exact path='/trades' element={<Trades />} />
+            <Route exact path='/stats' element={<Trades />} />
         </Routes>
+          </StatsState>
       </ExchangeState>
+      
         <Services />
         <Footer />
     </div>
