@@ -1,19 +1,16 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useLocation } from 'react-router-dom';
 
 const  NavbarC = () =>  {
-    const [expand, setexpand] = useState('md');
-
+    const expand = 'md';
+    const location = useLocation();
     return (
-        <Navbar key={expand}  expand={expand} className="mb-3 nav">
-            <Container fluid>
-                <Navbar.Brand href="#" style={{ fontFamily: 'monospace', fontWeight: '700', fontSize:'1.25rem', color: 'white' }}>TechBlocks</Navbar.Brand>
+        <Navbar key={expand} fixed='top' expand={expand} className="mb-3 d-flex" variant='dark' style={{ backgroundColor: `${(location.pathname === '/')? 'transparent !important': 'black'}` }}>
+            <Container >
+                <Navbar.Brand href="/" style={{ fontFamily: 'monospace', fontWeight: '700', fontSize:'1.25rem', color: 'white' }}>TechBlocks</Navbar.Brand>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${expand}`}
@@ -22,36 +19,16 @@ const  NavbarC = () =>  {
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                            Offcanvas
+                            Menu
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
-                            <NavDropdown
-                                title="Dropdown"
-                                id={`offcanvasNavbarDropdown-expand-${expand}`}
-                            >
-                                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Something else here
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                        <Nav className="justify-content-end flex-grow-1 pe-3" style={{ color:'white !important'}}>
+                            <Nav.Link href="/academy">Academy</Nav.Link>
+                            <Nav.Link href="/exchange">ExchangeRates</Nav.Link>
+                            <Nav.Link href="/stats">Statistics</Nav.Link>                        
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
+                        
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Container>

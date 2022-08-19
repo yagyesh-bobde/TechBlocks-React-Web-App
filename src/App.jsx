@@ -15,7 +15,7 @@ const App = () => {
 
   const location = useLocation();
   return (
-    <div style={{ overflowY: `${(location.pathname === '/')? 'hidden !important': 'auto'}`}}>
+    <div >
         <NavbarC />
 {/* CREATE ROUTES for the web pages to all the routes on the sites */}
         {/* ROUTE:! */}
@@ -31,8 +31,8 @@ const App = () => {
           </StatsState>
       </ExchangeState>
       
-        <Services />
-        <Footer />
+        {(location.pathname !== '/academy' && location.pathname !== '/') && <Services />}
+      {(location.pathname !== '/' ) && <Footer />}
     </div>
   )
 }

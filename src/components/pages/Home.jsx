@@ -1,72 +1,45 @@
-import React, {  } from 'react'
-import img from '../../assets/images/img-1.png'
-import { Button } from 'react-bootstrap'
+import Carousel from 'react-bootstrap/Carousel';
+import img1 from "../../assets/images/img-5.jpg"
+import { pages } from '../../assets/data/pages';
+import Button from 'react-bootstrap/Button';
 
-const Home = () => {
-  const elements = [
-    {
-      image: img,
-      h3: '',
-      h1: '',
-      p: ''
-    },
-    {
-      image: img,
-      h3: '',
-      h1: '',
-      p: ''
-    },
-    {
-      image: img,
-      h3: '',
-      h1: '',
-      p: ''
-    }
-  ]
-  // const vidref = createRef()
-  // useEffect(() => {
-  //   vidref.current.play()
-  // }, []);
 
+function Home() {
   return (
-
-    <div className='bg-home' style={{  }}>
-      <div className="container">
-
-        <div className='row' style={{ marginTop: '25%', display:'flex',justifyContent:'space-evenly'}}>
-          
-          <div className="col-6 home">
-            <h3>Learn</h3>
-            <h1>BlockChain</h1>
-            <p>Best resources to get you started in your blockchain journey.</p>
+    <div className="home">
+    <Carousel style={{ }} >
+      
+     {pages.map(page => {
+      return (
+        <Carousel.Item>
+          <img
+          style={{ height: '100vh'}}
+            className="d-block w-100"
+            src={img1}
+            alt={page.title}
+          />
+          <div className="col-sm-12 col-md-6 m-auto home_title_div text-center" style={{ color: 'white' }}>
             
-          <div className="row" style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5% !important'}}>
-            <div className="col-6">
-                <Button style={{ marginTop: '5%'}} variant="primary">TechBlock Academy</Button>
+            <h1 style={{ color: 'gold' , fontSize: '3rem'}}>{page.title}</h1>
+            <u>
+              <p >{page.desc}</p>
+            </u>
+            <div className='row w-25 m-auto'>
+              <Button variant="dark" className='d-inline' style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <i className="fa-solid fa-arrow-up-right-from-square mx-2" style={{ width: '5%' }}></i>
+                {page.btn}
+              </Button>
             </div>
           </div>
-            
-          </div>
-          
-          {/* <video ref={vidref} autoplay muted loop  plays-inline className='video' >
-            <source src={bg} type="video/mp4" />
-          </video>
-       */}
+        </Carousel.Item>
+        
+      )
+     })}
+      </Carousel>
 
-       {/* LEFT & RIGHT BUTTONS FOR THE CAROUSEL */}
-       <div className='btn btn-secondary button_home-style button_right'>
-        <span>
-        {'>'}
-        </span>
-       </div>
-       <div className='btn btn-secondary button_home-style button_left'>
-        <span>{'<'}</span>
-       </div>
-          
-        </div>
-      </div>
+      
     </div>
-  )
+  );
 }
 
 export default Home;

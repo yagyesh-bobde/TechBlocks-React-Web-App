@@ -1,0 +1,36 @@
+/* SERVICES PAGE */
+.services_parent {
+    padding: 0 0 ;
+    margin: 0 0 ;
+    width: 100vw;
+}
+
+.services_cards {
+    background-image: url('../../assets/images/img-5.jpg');
+    background-position: center;
+    min-width: 100vw;
+}
+.services_each_card{ 
+    width: 75%;
+    border-radius: 25px 25px;
+    box-shadow: 5px 5px 7px 3px grey;
+    animation: card-hover 1.5s infinite;
+    animation-play-state: paused;
+}
+@keyframes card-hover{
+    0% {
+        width:75%;
+        box-shadow: 5px 5px 7px 3px grey;
+    }
+    50%{
+        width: 75.5%;
+        box-shadow: 0 0 5px 7px grey;
+    }
+    100% {
+        width: 75%;
+        box-shadow: 5px 5px 7px 3px grey;
+    }
+}
+.services_each_card:hover{ 
+    animation-play-state: running;
+}

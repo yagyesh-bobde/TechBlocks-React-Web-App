@@ -1,0 +1,14 @@
+/* CSS FOR THE TRADES PAGE */
+.trades_page {
+    height: 75vh;
+}
+
+.stats {
+    height: 60vh;
+    overflow-y: auto !important;
+}
+.chart_tools{ 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
