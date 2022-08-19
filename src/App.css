@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+html {
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-home, carousel {
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-position: center;
+    width: 100%;
+    background-image: url('./assets/images/img-2.png')
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* VIDEO Background */
+.video {
+    position: absolute;
+    /* background: linear-gradient(to right, grey, grey); */
+    
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+/* CAROUSEL BUTTONS */
+.button_home-style{
+    width: 1% !important;
+    height: 5% !important;
+    border-radius: 50px 50px 50px 50px !important; 
+    padding : 0.5% 1% !important;
+}
+.button_left {
+    position: fixed;
+    left: 0;
+    top:50%;
+}
+.button_right {
+    position: fixed;
+    right: 0;
+    top: 50%;
+}
+.home{ 
+    font-family: fantasy, Courier, monospace;
+    margin: 15% auto;
+    text-align: center;
+    border: 0.5vw solid gold;
+    border-radius: 25% 25%;
+    padding: 5% 0;
+    color: white;
+    text-decoration: underline;
+}
+.home p {
+    font-family: cursive !important;
+    font-size: larger;
+}
+.home h1{
+    font-size: 4rem;
+    color: gold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* NAVIGATION */
+.nav {
+    color: white !important;
+    background-color: transparent;
+    margin-bottom: 0 !important;
+}
+.nav_header {
+    align-items: center;
+}
+/* ECHANGE PAGE */
+.exchange_page_parent {
+    margin-top: -5%;
 }
 
-.App-link {
-  color: #61dafb;
+.exchange_page_form {
+    /* background: linear-gradient(to bottom right,  black, white);*/
+    background-image: url('./assets/images/img-2.png');
+    background-position: bottom;
+    width: 100%;
+    height: 50vh;
+    padding-top: 10%;
+    z-index: -1;
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.exchange_page_parent h1{ 
+    text-align: center;
+    font-family:  monospace;
+    font-weight: 800 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* EXCHANGE PAGE : CAL FORM */
+.cal-form{
+    min-width: 75% !important;
+    height: 100%;
+    max-height: fit-content;
+    padding: 1%;
+    border-radius: 20px 20px 20px 20px;
+    
+    background-color: white;
+}
+
+.exchange_form_div{
+    box-shadow: 0 0 5px 3px grey;
+    border-radius: 20px 20px 20px 20px;
+    max-width: 70%;
+    margin: auto;
+    height: fit-content;
+    max-height: 35vh;
+}
+.exchange_form_div:hover {
+    box-shadow: 0 0 7px 5px grey;
+}
+
+.cal-form {
+    margin-top: -10%;
+}
+.cal-form .row{ 
+    height: min-content;
+    max-height: 35vh;
+    display: flex;
+    justify-content: center;
+}
+.cal-form h1{
+    text-align: center;
+}
+.cal-form .btn-primary{
+    display: inline-block;
+    width: 50%;
+    margin: 1% auto;
+}
+.cal-form label{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.cal-form input {
+    border-radius: 20px 20px;
+    display: inline-block;
+    min-height: 40px;
+    max-height: 7%;
+    height: 40px !important;
+}
+.cal-form form{
+    padding: 0 5%;
+}
+
+
+/* EXCHANGE PAGE RATES */
+.rates_div {
+    margin: 5% auto;
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+.rates_page .row {
+    margin: 5% auto;
+}
+
+/* FOOTER */
+.footer {
+    min-width: 100%;
+    position: fixed;
+    bottom: 0;
+    left:0;
+}
+.value {
+    min-width: 50px;
+    max-width: 30%;
+}
+
+
+@media (min-aspect-ratio: 16/9){
+    .video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .video{
+        width: auto;
+        height: 100%;
+    }
 }

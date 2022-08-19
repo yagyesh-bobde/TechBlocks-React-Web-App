@@ -1,0 +1,6 @@
+export { default as NavbarC } from './pages/NavbarC'
+export { default as Footer } from './pages/Footer'
+export { default as Home } from './pages/Home'
+export { default as Exchange } from './pages/Exchange'
+export { default as Trades } from './pages/Trades'
+export { default as Services } from './pages/Services'
