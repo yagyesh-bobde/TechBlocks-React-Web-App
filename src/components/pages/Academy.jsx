@@ -42,20 +42,6 @@ const Academy = () => {
                         </li>
                     })}
                     
-               
-                  <div className="row">
-                      <Form onSubmit={(e) => handleSearch(e)}>
-                          <Form.Control
-                              type="search"
-                              placeholder="Search"
-                              className="me-2"
-                              aria-label="Search"
-                              onChange={(e) => setsearch(e.target.value)}
-                              value={search}
-                          />
-                          <Button type='submit' variant="outline-success">Search</Button>
-                      </Form>
-                  </div>
             </div>
              
             <div className="col-sm-12 col-md-8 text-center">
