@@ -17,7 +17,7 @@ function CardItem({ page}) {
                 <Card.Text>
                     {page.desc}
                 </Card.Text>
-                <Button onClick={(page) => navigate(page.link)} variant="primary" className='d-flex' style={{ justifyContent: 'center', alignItems:'center'}}>
+                <Button onClick={() => navigate(page.link)} variant="primary" className='d-flex' style={{ justifyContent: 'center', alignItems:'center'}}>
                     <i className="fa-solid fa-arrow-up-right-from-square mx-2" style={{ width:'5%'}}></i>
                     {page.btn}
                     </Button>

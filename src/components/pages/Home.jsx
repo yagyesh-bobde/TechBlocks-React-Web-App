@@ -27,7 +27,7 @@ function Home() {
               <p >{page.desc}</p>
             </u>
             <div className='row w-25 m-auto'>
-              <Button onClick={(page) => navigate(page.link) } variant="dark" className='d-inline' style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Button onClick={() => navigate(page.link) } variant="dark" className='d-inline' style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <i className="fa-solid fa-arrow-up-right-from-square mx-2" style={{ width: '5%' }}></i>
                 {page.btn}
               </Button>
