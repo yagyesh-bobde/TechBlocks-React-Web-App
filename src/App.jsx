@@ -32,7 +32,7 @@ const App = () => {
       </ExchangeState>
       
         {(location.pathname !== '/academy' && location.pathname !== '/') && <Services />}
-      {(location.pathname !== '/' ) && <Footer />}
+      {(location.pathname !== '/academy' && location.pathname !== '/') && <Footer />}
     </div>
   )
 }
